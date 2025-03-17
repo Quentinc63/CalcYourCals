@@ -3,6 +3,9 @@ import (
 	"database/sql"
 	"net/http"
 	"github.com/gorilla/mux"
+	"github.com/Quentinc63/CalcYourCals/service/user"
+	"log"
+	
 )
 
 type APIserver struct {
@@ -11,10 +14,10 @@ type APIserver struct {
 }
 
 func NewAPIserver(addr string, db *sql.DB) *APIserver {
-	return &APIserver{
-		addr: addr,
-		 db: db
-		}
+    return &APIserver{
+        addr: addr,
+        db: db,
+    }
 }
 
 func (s *APIserver) Run() error {
