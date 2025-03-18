@@ -64,8 +64,6 @@ CREATE TABLE `meal` (
 CREATE TABLE `day_meal` (
     `day_id` INT NOT NULL ,
     `meal_id` INT NOT NULL ,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (`day_id`) REFERENCES `day`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`meal_id`) REFERENCES `meal`(`id`) ON DELETE CASCADE
 );
@@ -85,8 +83,6 @@ CREATE TABLE `food_meal` (
     `meal_id` INT NOT NULL,
     `food_id` INT NOT NULL,
     `quantity` INT NOT NULL,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (`meal_id`) REFERENCES `meal`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`food_id`) REFERENCES `food`(`id`) ON DELETE CASCADE
 );
@@ -111,8 +107,6 @@ CREATE TABLE `exercise` (
 CREATE TABLE `exercise_session` (
     `session_id` INT NOT NULL,
     `exercise_id` INT NOT NULL,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (`session_id`) REFERENCES `session`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`exercise_id`) REFERENCES `exercise`(`id`) ON DELETE CASCADE
 );
