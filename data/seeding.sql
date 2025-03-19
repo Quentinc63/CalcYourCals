@@ -14,6 +14,12 @@ INSERT INTO `user` (`username`, `password`, `firstname`, `lastname`, `email`, `h
 ('thomasweight', 'weight123', 'Thomas', 'Anderson', 't.anderson@example.com', 182, 88, 33, 'user', FALSE),
 ('oliviazumba', 'zumba123', 'Olivia', 'Martin', 'olivia.m@example.com', 167, 59, 25, 'coach', TRUE);
 
+INSERT INTO `coach_user` (`coach_id`,`user_id`)
+VALUES 
+(3,1),
+(3,2),
+(8,5);
+
 -- Insertion des équipes
 INSERT INTO `team` (`name`) VALUES
 ('Runners Club'),
