@@ -19,10 +19,12 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `coach_user` (
-    FOREIGN KEY (`user_id`) REFERENCES `user`(`id`),
-    FOREIGN KEY (`coach_id`) REFERENCES `user`(`id`),
+    `user_id` INT NOT NULL,
+    `coach_id` INT NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`coach_id`) REFERENCES `user`(`id`) ON DELETE CASCADE
 );
 
 CREATE TABLE `team` (
