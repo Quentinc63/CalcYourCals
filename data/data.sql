@@ -4,16 +4,23 @@ DROP TABLE IF EXISTS `user`, `day`, `meal`, `day_meal`, `food_meal`, `food`, `te
 
 CREATE TABLE `user` (
     `id` INT AUTO_INCREMENT PRIMARY KEY, 
-    `username` VARCHAR(55) NOT NULL,
-    `password` VARCHAR(55) NOT NULL,
-    `firstname` VARCHAR(55) NOT NULL,
-    `lastname` VARCHAR(55) NOT NULL,
-    `email` VARCHAR(55) NOT NULL,
+    `username` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `firstname` VARCHAR(255) NOT NULL,
+    `lastname` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
     `height` INT,
     `weight` INT,
     `age` INT NOT NULL,
-    `role` VARCHAR(15) NOT NULL,
+    `role` VARCHAR(55) NOT NULL,
     `public` BOOLEAN NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `coach_user` (
+    FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
+    FOREIGN KEY (`coach_id`) REFERENCES `user`(`id`)
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -56,7 +63,7 @@ CREATE TABLE `day` (
 
 CREATE TABLE `meal` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `name` VARCHAR(55) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -70,7 +77,7 @@ CREATE TABLE `day_meal` (
 
 CREATE TABLE `food` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `name` VARCHAR(55) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
     `calories` INT NOT NULL,
     `protein` INT NOT NULL,
     `carbs` INT NOT NULL,
@@ -89,7 +96,7 @@ CREATE TABLE `food_meal` (
 
 CREATE TABLE `session` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `name` VARCHAR(55) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
     `day_id` INT NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -98,7 +105,7 @@ CREATE TABLE `session` (
 
 CREATE TABLE `exercise` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `name` VARCHAR(55) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
     `calories` INT NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
