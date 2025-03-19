@@ -145,66 +145,65 @@ INSERT INTO `day_meal` (`day_id`, `meal_id`) VALUES
 
 -- Insertion des aliments
 INSERT INTO `food` (`name`, `calories`, `protein`, `carbs`, `fat`) VALUES
-('Œufs brouillés', 140, 12, 1, 10),
-('Pain complet', 80, 4, 15, 1),
-('Avocat', 160, 2, 9, 15),
-('Poulet grillé', 165, 31, 0, 3),
-('Riz brun', 112, 2, 24, 1),
-('Brocoli', 55, 4, 11, 0),
-('Saumon', 206, 22, 0, 13),
-('Patate douce', 86, 2, 20, 0),
-('Épinards', 23, 3, 4, 0),
-('Yaourt grec', 100, 10, 4, 5),
-('Banane', 105, 1, 27, 0),
-('Amandes', 161, 6, 6, 14),
-('Thon en conserve', 116, 25, 0, 1),
-('Quinoa', 120, 4, 21, 2),
-('Lentilles', 116, 9, 20, 0),
-('Pomme', 95, 0, 25, 0),
-('Fromage cottage', 98, 11, 3, 4),
-('Dinde', 125, 26, 0, 1),
-('Riz de chou-fleur', 25, 2, 5, 0),
-('Protéine en poudre', 120, 24, 3, 1),
-('Lait d\'amande', 30, 1, 1, 2),
-('Fraises', 49, 1, 12, 0),
-('Tofu', 94, 10, 2, 6),
-('Chocolat noir (70%)', 170, 2, 13, 12),
-('Huile d\'olive', 119, 0, 0, 14);
-
+('Œufs brouillés', 1.4000, 0.1200, 0.0100, 0.1000),
+('Pain complet', 0.8000, 0.0400, 0.1500, 0.0100),
+('Avocat', 1.6000, 0.0200, 0.0900, 0.1500),
+('Poulet grillé', 1.6500, 0.3100, 0.0000, 0.0300),
+('Riz brun', 1.1200, 0.0200, 0.2400, 0.0100),
+('Brocoli', 0.5500, 0.0400, 0.1100, 0.0000),
+('Saumon', 2.0600, 0.2200, 0.0000, 0.1300),
+('Patate douce', 0.8600, 0.0200, 0.2000, 0.0000),
+('Épinards', 0.2300, 0.0300, 0.0400, 0.0000),
+('Yaourt grec', 1.0000, 0.1000, 0.0400, 0.0500),
+('Banane', 1.0500, 0.0100, 0.2700, 0.0000),
+('Amandes', 1.6100, 0.0600, 0.0600, 0.1400),
+('Thon en conserve', 1.1600, 0.2500, 0.0000, 0.0100),
+('Quinoa', 1.2000, 0.0400, 0.2100, 0.0200),
+('Lentilles', 1.1600, 0.0900, 0.2000, 0.0000),
+('Pomme', 0.9500, 0.0000, 0.2500, 0.0000),
+('Fromage cottage', 0.9800, 0.1100, 0.0300, 0.0400),
+('Dinde', 1.2500, 0.2600, 0.0000, 0.0100),
+('Riz de chou-fleur', 0.2500, 0.0200, 0.0500, 0.0000),
+('Protéine en poudre', 1.2000, 0.2400, 0.0300, 0.0100),
+('Lait d\'amande', 0.3000, 0.0100, 0.0100, 0.0200),
+('Fraises', 0.4900, 0.0100, 0.1200, 0.0000),
+('Tofu', 0.9400, 0.1000, 0.0200, 0.0600),
+('Chocolat noir (70%)', 1.7000, 0.0200, 0.1300, 0.1200),
+('Huile d\'olive', 1.1900, 0.0000, 0.0000, 0.1400);
 -- Association repas-aliments
 -- Petit-déjeuner de John (jour 1)
-INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity`) VALUES
-(1, 1, 2), -- 2 portions d'œufs brouillés
-(1, 2, 1), -- 1 portion de pain complet
-(1, 3, 1); -- 1 avocat
+INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity_g`) VALUES
+(1, 1, 100), -- 2 portions d'œufs brouillés
+(1, 2, 112), -- 1 portion de pain complet
+(1, 3, 123); -- 1 avocat
 
 -- Déjeuner de John (jour 1)
-INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity`) VALUES
-(2, 4, 1), -- 1 portion de poulet grillé
-(2, 5, 1), -- 1 portion de riz brun
-(2, 6, 2); -- 2 portions de brocoli
+INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity_g`) VALUES
+(2, 4, 123), -- 1 portion de poulet grillé
+(2, 5, 154), -- 1 portion de riz brun
+(2, 6, 222); -- 2 portions de brocoli
 
 -- Dîner de John (jour 1)
-INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity`) VALUES
-(3, 7, 1), -- 1 portion de saumon
-(3, 8, 1), -- 1 portion de patate douce
-(3, 9, 2); -- 2 portions d'épinards
+INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity_g`) VALUES
+(3, 7, 124), -- 1 portion de saumon
+(3, 8, 112), -- 1 portion de patate douce
+(3, 9, 200); -- 2 portions d'épinards
 
 -- Petit-déjeuner de John (jour 2)
-INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity`) VALUES
-(1, 10, 1), -- 1 portion de yaourt grec
-(1, 11, 1), -- 1 banane
-(1, 12, 1); -- 1 portion d'amandes
+INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity_g`) VALUES
+(1, 10, 134), -- 1 portion de yaourt grec
+(1, 11, 154), -- 1 banane
+(1, 12, 134); -- 1 portion d'amandes
 
 -- Collation de Jane (jour 6)
-INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity`) VALUES
-(4, 16, 1), -- 1 pomme
-(4, 12, 1); -- 1 portion d'amandes
+INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity_g`) VALUES
+(4, 16, 154), -- 1 pomme
+(4, 12, 134); -- 1 portion d'amandes
 
 -- Pré-entraînement de Bob (jour 11)
-INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity`) VALUES
-(6, 11, 1), -- 1 banane
-(6, 20, 1); -- 1 portion de protéine en poudre
+INSERT INTO `food_meal` (`meal_id`, `food_id`, `quantity_g`) VALUES
+(6, 11, 145), -- 1 banane
+(6, 20, 56); -- 1 portion de protéine en poudre
 
 -- Insertion des sessions
 INSERT INTO `session` (`name`, `day_id`) VALUES

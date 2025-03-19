@@ -80,10 +80,10 @@ CREATE TABLE `day_meal` (
 CREATE TABLE `food` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(255) NOT NULL,
-    `calories` INT NOT NULL,
-    `protein` INT NOT NULL,
-    `carbs` INT NOT NULL,
-    `fat` INT NOT NULL,
+    `calories` DECIMAL(10.4) NOT NULL,
+    `protein` DECIMAL(10.4) NOT NULL,
+    `carbs` DECIMAL(10.4) NOT NULL,
+    `fat` DECIMAL(10.4) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -91,7 +91,7 @@ CREATE TABLE `food` (
 CREATE TABLE `food_meal` (
     `meal_id` INT NOT NULL,
     `food_id` INT NOT NULL,
-    `quantity` INT NOT NULL,
+    `quantity_g` INT NOT NULL,
     FOREIGN KEY (`meal_id`) REFERENCES `meal`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`food_id`) REFERENCES `food`(`id`) ON DELETE CASCADE
 );
