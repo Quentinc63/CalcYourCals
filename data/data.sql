@@ -19,8 +19,8 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `coach_user` (
-    FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
-    FOREIGN KEY (`coach_id`) REFERENCES `user`(`id`)
+    FOREIGN KEY (`user_id`) REFERENCES `user`(`id`),
+    FOREIGN KEY (`coach_id`) REFERENCES `user`(`id`),
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
