@@ -80,10 +80,10 @@ CREATE TABLE `day_meal` (
 CREATE TABLE `food` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(255) NOT NULL,
-    `calories` DECIMAL(10.4) NOT NULL,
-    `protein` DECIMAL(10.4) NOT NULL,
-    `carbs` DECIMAL(10.4) NOT NULL,
-    `fat` DECIMAL(10.4) NOT NULL,
+    `calories` DECIMAL(10,4) NOT NULL,
+    `protein` DECIMAL(10,4) NOT NULL,
+    `carbs` DECIMAL(10,4) NOT NULL,
+    `fat` DECIMAL(10,4) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
