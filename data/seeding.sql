@@ -215,52 +215,54 @@ INSERT INTO `session` (`name`, `day_id`) VALUES
 ('Musculation jambes', 21); -- Mike jour 1
 
 -- Insertion des exercices
-INSERT INTO `exercise` (`name`, `calories`) VALUES
-('Course à pied', 700),
-('Squats', 150),
-('Pompes', 100),
-('Burpees', 250),
-('Planche', 80),
-('Deadlift', 200),
-('Press banche', 180),
-('Développé épaules', 160),
-('Rowing', 600),
-('Vélo elliptique', 500),
-('Marche rapide', 350),
-('Kettlebell swing', 250),
-('Tractions', 120),
-('Hip thrust', 150),
-('Mountain climbers', 200),
-('Box jumps', 280),
-('Fentes avant', 140),
-('Battle ropes', 310),
-('Gainage latéral', 90),
-('Saut à la corde', 600);
+INSERT INTO `exercise` (`name`, `mets`) VALUES
+('Course à pied', 11.5),
+('Squats', 5.0),
+('Pompes', 4.0),
+('Burpees', 8.0),
+('Planche', 3.3),
+('Deadlift', 6.0),
+('Press banc', 5.8),
+('Développé épaules', 4.8),
+('Rowing', 12.0),
+('Vélo elliptique', 8.0),
+('Marche rapide', 5.0),
+('Kettlebell swing', 9.8),
+('Tractions', 5.0),
+('Hip thrust', 4.8),
+('Mountain climbers', 8.0),
+('Box jumps', 10.0),
+('Fentes avant', 4.0),
+('Battle ropes', 9.0),
+('Gainage latéral', 3.0),
+('Saut à la corde', 12.0);
 
--- Association session-exercices
+
+-- Association session-exercices avec les minutes
 -- Course matinale de John
-INSERT INTO `exercise_session` (`session_id`, `exercise_id`) VALUES
-(1, 1), -- Course à pied
-(1, 11); -- Marche rapide
+INSERT INTO `exercise_session` (`session_id`, `exercise_id`, `minutes`) VALUES
+(1, 1, 30), -- 30 minutes de course à pied
+(1, 11, 20); -- 20 minutes de marche rapide
 
 -- Musculation de John
-INSERT INTO `exercise_session` (`session_id`, `exercise_id`) VALUES
-(2, 2), -- Squats
-(2, 3), -- Pompes
-(2, 6), -- Deadlift
-(2, 7); -- Press banche
+INSERT INTO `exercise_session` (`session_id`, `exercise_id`, `minutes`) VALUES
+(2, 2, 15), -- 15 minutes de squats
+(2, 3, 10), -- 10 minutes de pompes
+(2, 6, 12), -- 12 minutes de deadlift
+(2, 7, 10); -- 10 minutes de press banc
 
 -- Yoga de Jane
-INSERT INTO `exercise_session` (`session_id`, `exercise_id`) VALUES
-(3, 5), -- Planche
-(3, 19); -- Gainage latéral
+INSERT INTO `exercise_session` (`session_id`, `exercise_id`, `minutes`) VALUES
+(3, 5, 8), -- 8 minutes de planche
+(3, 19, 7); -- 7 minutes de gainage latéral
 
 -- HIIT de Bob
-INSERT INTO `exercise_session` (`session_id`, `exercise_id`) VALUES
-(4, 4), -- Burpees
-(4, 15), -- Mountain climbers
-(4, 16), -- Box jumps
-(4, 20); -- Saut à la corde
+INSERT INTO `exercise_session` (`session_id`, `exercise_id`, `minutes`) VALUES
+(4, 4, 5), -- 5 minutes de burpees
+(4, 15, 4), -- 4 minutes de mountain climbers
+(4, 16, 6), -- 6 minutes de box jumps
+(4, 20, 7); -- 7 minutes de saut à la corde
+
 
 -- Insertion des médias
 INSERT INTO `media` (`name`, `url`) VALUES

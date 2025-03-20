@@ -108,7 +108,7 @@ CREATE TABLE `session` (
 CREATE TABLE `exercise` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `name` VARCHAR(255) NOT NULL,
-    `calories` INT NOT NULL,
+    `mets` DECIMAL(3,1) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -116,6 +116,7 @@ CREATE TABLE `exercise` (
 CREATE TABLE `exercise_session` (
     `session_id` INT NOT NULL,
     `exercise_id` INT NOT NULL,
+    `minutes` INT NOT NULL,
     FOREIGN KEY (`session_id`) REFERENCES `session`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`exercise_id`) REFERENCES `exercise`(`id`) ON DELETE CASCADE
 );
