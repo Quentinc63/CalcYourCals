@@ -30,7 +30,7 @@ GROUP BY d.id
 
 -- Sur une session avoir la consommation de chaque exercise sur la session 
 
-SELECT *, (e.mets * 3.5 * p.weight)/200 AS calories_consume FROM `user` p
+SELECT *, (e.mets * 3.5 * p.weight/200)* es.minutes AS calories_consume FROM `user` p
 JOIN `day` d ON p.id = d.user_id
 JOIN `session` s ON s.day_id = d.id
 JOIN `exercise_session` es ON  es.session_id = s.id
