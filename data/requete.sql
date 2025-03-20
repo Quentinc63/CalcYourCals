@@ -36,3 +36,12 @@ JOIN `session` s ON s.day_id = d.id
 JOIN `exercise_session` es ON  es.session_id = s.id
 JOIN `exercise` e ON e.id = es.exercise_id
 WHERE p.id = 1 AND s.id = 2
+
+-- avoir la depense journaliere de calories exercices + metabolisme 
+
+SELECT u.id,u.firstname, u.lastname, u.height,u.weight,d.date, SUM((e.mets * 3.5 * u.weight/200)* es.minutes)+ u.bmr AS calories_consume FROM `user` u
+JOIN `day` d ON u.id = d.user_id
+JOIN `session` s ON s.day_id = d.id
+JOIN `exercise_session` es ON  es.session_id = s.id
+JOIN `exercise` e ON e.id = es.exercise_id
+WHERE u.id = 1 AND d.id = 2
