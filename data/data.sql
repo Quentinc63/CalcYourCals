@@ -9,11 +9,13 @@ CREATE TABLE `user` (
     `firstname` VARCHAR(255) NOT NULL,
     `lastname` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
-    `height` INT,
-    `weight` INT,
+    `height` INT NOT NULL,
+    `weight` INT NOT NULL,
     `age` INT NOT NULL,
     `role` VARCHAR(55) NOT NULL,
     `public` BOOLEAN NOT NULL,
+    `gender` VARCHAR(55) NOT NULL,
+    `bmr`INT NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

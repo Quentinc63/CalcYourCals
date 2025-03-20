@@ -2,17 +2,18 @@
 BEGIN;
 
 -- Insertion des utilisateurs
-INSERT INTO `user` (`username`, `password`, `firstname`, `lastname`, `email`, `height`, `weight`, `age`, `role`, `public`) VALUES
-('johndoe', 'password123', 'John', 'Doe', 'john.doe@example.com', 180, 75, 30, 'user', TRUE),
-('janedoe', 'password123', 'Jane', 'Doe', 'jane.doe@example.com', 165, 60, 28, 'user', TRUE),
-('coachbob', 'coach123', 'Bob', 'Smith', 'coach.bob@example.com', 185, 82, 35, 'coach', TRUE),
-('sarahfit', 'fit123', 'Sarah', 'Wilson', 'sarah.wilson@example.com', 172, 65, 29, 'user', FALSE),
-('mikehealth', 'health123', 'Mike', 'Johnson', 'mike.j@example.com', 190, 90, 32, 'user', TRUE),
-('lisastrong', 'strong123', 'Lisa', 'Brown', 'lisa.brown@example.com', 168, 62, 27, 'user', TRUE),
-('davidrun', 'run123', 'David', 'Williams', 'david.w@example.com', 178, 73, 31, 'user', TRUE),
-('amandayoga', 'yoga123', 'Amanda', 'Taylor', 'amanda.t@example.com', 170, 58, 26, 'coach', TRUE),
-('thomasweight', 'weight123', 'Thomas', 'Anderson', 't.anderson@example.com', 182, 88, 33, 'user', FALSE),
-('oliviazumba', 'zumba123', 'Olivia', 'Martin', 'olivia.m@example.com', 167, 59, 25, 'coach', TRUE);
+INSERT INTO `user` (`username`, `password`, `firstname`, `lastname`, `email`, `height`, `weight`, `age`, `role`, `public`, `gender`, `bmr`) VALUES
+('johndoe', 'password123', 'John', 'Doe', 'john.doe@example.com', 180, 75, 30, 'user', TRUE, 'male', 1755),
+('janedoe', 'password123', 'Jane', 'Doe', 'jane.doe@example.com', 165, 60, 28, 'user', TRUE, 'female', 1407),
+('coachbob', 'coach123', 'Bob', 'Smith', 'coach.bob@example.com', 185, 82, 35, 'coach', TRUE, 'male', 1839),
+('sarahfit', 'fit123', 'Sarah', 'Wilson', 'sarah.wilson@example.com', 172, 65, 29, 'user', FALSE, 'female', 1455),
+('mikehealth', 'health123', 'Mike', 'Johnson', 'mike.j@example.com', 190, 90, 32, 'user', TRUE, 'male', 1938),
+('lisastrong', 'strong123', 'Lisa', 'Brown', 'lisa.brown@example.com', 168, 62, 27, 'user', TRUE, 'female', 1451),
+('davidrun', 'run123', 'David', 'Williams', 'david.w@example.com', 178, 73, 31, 'user', TRUE, 'male', 1752),
+('amandayoga', 'yoga123', 'Amanda', 'Taylor', 'amanda.t@example.com', 170, 58, 26, 'coach', TRUE, 'female', 1395),
+('thomasweight', 'weight123', 'Thomas', 'Anderson', 't.anderson@example.com', 182, 88, 33, 'user', FALSE, 'male', 1876),
+('oliviazumba', 'zumba123', 'Olivia', 'Martin', 'olivia.m@example.com', 167, 59, 25, 'coach', TRUE, 'female', 1409);
+
 
 INSERT INTO `coach_user` (`coach_id`,`user_id`)
 VALUES 
