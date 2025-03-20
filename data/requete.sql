@@ -44,4 +44,4 @@ JOIN `day` d ON u.id = d.user_id
 JOIN `session` s ON s.day_id = d.id
 JOIN `exercise_session` es ON  es.session_id = s.id
 JOIN `exercise` e ON e.id = es.exercise_id
-WHERE u.id = 1 AND d.id = 2
+WHERE d.id = 2
